@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Claims Tracker</title>
+</head>
+<body>
+    <h1>Claims Tracker</h1>
+    <p>Total claims: {{ count }}</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Claim ID</th>
+                <th>Policy Number</th>
+                <th>Claim Amount</th>
+                <th>Decision</th>
+                <th>Claim Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in claim %}
+            <tr>
+                <td>
+                    <a href= "{% url 'claim_details' c.id %}">{{ c.case_id }}</a>
+                </td>
+                <td>{{ c.policy_id }}</td>
+                <td>{{ c.sum_insured_inr }}</td>
+                <td>{{ c.decision_display }}</td>
+                <td>{{ c.claim_date | date:"d-m-Y" }}</td>
+            </tr>
+            
+            {% empty %}
+            <tr>
+                <td colspan="5">No claims found.</td>
+            </tr>
+            
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Claim</title>
+</head>
+<body>
+    <!-- <h1>Update Claim</h1>
+
+    <p>Claim ID: {{ claim.case_id }}</p>
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        <p>
+            <label for="case_id">Case ID:</label>
+            <input type="text" id="case_id" name="case_id"
+                   value="{{ claim.case_id }}" required>
+        </p>
+
+        <p>
+            <label for="policy_id">Policy ID:</label>
+            <input type="text" id="policy_id" name="policy_id"
+                   value="{{ claim.policy_id }}" required>
+        </p>
+
+        <p>
+            <label for="claim_date">Claim Date:</label>
+            <input type="date" id="claim_date" name="claim_date"
+                   value="{{ claim.claim_date|date:'Y-m-d' }}" required>
+        </p>
+
+        <p>
+            <label for="sum_insured_inr">Sum Insured (INR):</label>
+            <input type="number" id="sum_insured_inr"
+                   name="sum_insured_inr"
+                   value="{{ claim.sum_insured_inr }}" min="0" required>
+        </p>
+
+        <p>
+            <label for="decision">Decision:</label>
+            <select id="decision" name="decision" required>
+
+                <option value="APPROVED"
+                    {% if claim.decision == "APPROVED" %}selected{% endif %}>
+                    Approved
+                </option>
+
+                <option value="NEEDS_REVIEW"
+                    {% if claim.decision == "NEEDS_REVIEW" %}selected{% endif %}>
+                    Needs Review
+                </option>
+
+                <option value="REJECTED"
+                    {% if claim.decision == "REJECTED" %}selected{% endif %}>
+                    Rejected
+                </option>
+
+            </select>
+        </p>
+
+        <button type="submit">Update Claim</button>
+    </form>
+
+    <p>
+        <a href="{% url 'claim_details' claim.id %}">Cancel</a>
+    </p> -->
+
+
+
+    <h1>Update Claim</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Update Claim</button>
+    </form>
+
+
+
+
+</body>
+</html>

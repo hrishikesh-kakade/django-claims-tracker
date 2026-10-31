@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Claim Details</title>
+</head>
+<body>
+    <h1>Claim Details</h1>
+    <p>
+        <a href="{% url 'claim_list' %}"> Back to ALl Claims</a>
+    </p>
+
+    <p> Claim ID: {{claim.case_id }}</p>
+    <p> Policy ID: {{claim.policy_id}}</p>
+    <p>Sum Insured: {{sum_insured_display}}</p>
+    <p>Claim Date: {{claim.claim_date | date:"d-m-Y" }}</p>
+    <p> Decision: {{decision_display}}</p>
+
+        {% if claim.decision == 'APPROVED' %}
+            <p>Claim Status: Approved</p>
+        {% elif claim.decision == 'REJECTED' %}
+            <p>Claim Status: Rejected</p>
+        {% elif claim.decision == 'NEEDS_REVIEW' %}
+            <p>Claim Status: Needs Review</p>
+        {% endif %}
+
+    <button><a href="{% url 'claim_update' claim.id %}">Update Claim</a></button>
+
+    <button><a href="{% url 'claim_delete' claim.id %}">Delete Claim</a></button>
+</body>
+</html>

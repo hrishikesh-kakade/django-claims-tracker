@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    Create Claim
+</head>
+<body>
+    <h1>Create New Claim</h1>
+    <!-- <form method="post">
+        {% csrf_token %}
+
+        <p>
+            <label for="case_id">Case ID:</label>
+            <input type="text" id="case_id" name="case_id" required>
+        </p>
+
+        <p>
+            <label for="policy_id"> Policy ID:</label>
+            <input type="text" id="policy_id" name="policy_id" required>
+        </p>
+
+        <p>
+            <label for="claim_date">Claim Date</label>
+            <input type="date" id="claim_date" name="claim_date" required>
+        </p>
+
+        <p>
+            <label for="sum_insured_inr">Sum Insured (INR):</label>
+            <input type="number" id="sum_insured_inr" name="sum_insured_inr" min="0" required>
+        </p>
+
+        <p>
+            <label for="decision">Decision:</label>
+            <select id="decision" name="decision" required>
+                <option value="">Select Decision</option>
+                <option value="APPROVED">Approved</option>
+                <option value="NEEDS_REVIEW">Needs Review</option>
+                <option value="REJECTED">Rejected</option>
+            </select>
+        </p>
+
+        <button type="submit">Create Claim</button>
+
+    </form> -->
+
+
+
+
+    <!-- <h1>Create New Claim</h1> -->
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Create Claim</button>
+</form>
+
+
+</body>
+</html>
